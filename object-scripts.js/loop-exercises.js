@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 // let message = 0;
 
 // while (message <= 6) {
@@ -7,8 +7,7 @@
 // }
 
 let message = "I Love Loops";
-for(let loop = 0; loop <= 6; loop = loop + 1){
-message = message;
-console.log(message);
-
+for (let loop = 0; loop <= 6; loop = loop + 1) {
+  message = message;
+  console.log(message);
 }
