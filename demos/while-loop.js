@@ -4,6 +4,6 @@ let count = 1;
 
 
 while (count <= 100) {
-    console.log("hi " + count);
+    console.log("hi " + count); //count++
     count = count +1;
 }
