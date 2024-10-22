@@ -16,9 +16,9 @@ function printContact(myInfo) {
 printContact(myInfo);
 
 let friend = {
-    first: "Joe",
-    last: "Garvin",
+    first: "Ted",
+    last: "Czerniewski",
     age: 25,
-    job: "Accountant",
-    interests: "Baseball",
+    job: "Something in Texas",
+    interests: "Gambling",
 }
