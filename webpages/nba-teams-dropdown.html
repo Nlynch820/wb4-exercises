@@ -60,9 +60,10 @@
 let teamSelect = document.getElementById("teamSelect")
 
 for (const team of nbaTeams) {
-    let option = document.createElement("option")
-    option.value = team.id;
-    option.innerText = team.name;
+    // let option = document.createElement("option")
+    // option.value = team.id;
+    // option.innerText = team.name;
+    let option = new Option(team.name, team.id)
     teamSelect.appendChild(option);
 }
 
