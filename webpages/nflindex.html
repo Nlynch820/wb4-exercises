@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="container mt-4">
+        <div class="card p-4" style="width: 18rem">
+          <form>
+            <div class="mb-3">
+              <label for="teamSelect" class="form-label">Select Your Team</label>
+              <select class="form-select" id="teamSelect">
+                <option value=" ">Select...</option>
+              </select>
+            </div>
+            <button onclick="showDetails()" type="button">Show Details</button>
+          </form>
+        </div>
+        <div id="detailsDiv" class="card p-4 w-50 mt-4"></div>
+      </main>
+      <script>
+        "use strict"
+
+        const nflTeams = [
+  { id: 1, name: "Arizona Cardinals", abbreviation: "ARI", arena: "State Farm Stadium" },
+  { id: 2, name: "Atlanta Falcons", abbreviation: "ATL", arena: "Mercedes-Benz Stadium" },
+  { id: 3, name: "Baltimore Ravens", abbreviation: "BAL", arena: "M&T Bank Stadium" },
+  { id: 4, name: "Buffalo Bills", abbreviation: "BUF", arena: "Highmark Stadium" },
+  { id: 5, name: "Carolina Panthers", abbreviation: "CAR", arena: "Bank of America Stadium" },
+  { id: 6, name: "Chicago Bears", abbreviation: "CHI", arena: "Soldier Field" },
+  { id: 7, name: "Cincinnati Bengals", abbreviation: "CIN", arena: "Paycor Stadium" },
+  { id: 8, name: "Cleveland Browns", abbreviation: "CLE", arena: "Cleveland Browns Stadium" },
+  { id: 9, name: "Dallas Cowboys", abbreviation: "DAL", arena: "AT&T Stadium" },
+  { id: 10, name: "Denver Broncos", abbreviation: "DEN", arena: "Empower Field at Mile High" },
+  { id: 11, name: "Detroit Lions", abbreviation: "DET", arena: "Ford Field" },
+  { id: 12, name: "Green Bay Packers", abbreviation: "GB", arena: "Lambeau Field" },
+  { id: 13, name: "Houston Texans", abbreviation: "HOU", arena: "NRG Stadium" },
+  { id: 14, name: "Indianapolis Colts", abbreviation: "IND", arena: "Lucas Oil Stadium" },
+  { id: 15, name: "Jacksonville Jaguars", abbreviation: "JAX", arena: "TIAA Bank Field" },
+  { id: 16, name: "Kansas City Chiefs", abbreviation: "KC", arena: "GEHA Field at Arrowhead Stadium" },
+  { id: 17, name: "Las Vegas Raiders", abbreviation: "LV", arena: "Allegiant Stadium" },
+  { id: 18, name: "Los Angeles Chargers", abbreviation: "LAC", arena: "SoFi Stadium" },
+  { id: 19, name: "Los Angeles Rams", abbreviation: "LAR", arena: "SoFi Stadium" },
+  { id: 20, name: "Miami Dolphins", abbreviation: "MIA", arena: "Hard Rock Stadium" },
+  { id: 21, name: "Minnesota Vikings", abbreviation: "MIN", arena: "U.S. Bank Stadium" },
+  { id: 22, name: "New England Patriots", abbreviation: "NE", arena: "Gillette Stadium" },
+  { id: 23, name: "New Orleans Saints", abbreviation: "NO", arena: "Caesars Superdome" },
+  { id: 24, name: "New York Giants", abbreviation: "NYG", arena: "MetLife Stadium" },
+  { id: 25, name: "New York Jets", abbreviation: "NYJ", arena: "MetLife Stadium" },
+  { id: 26, name: "Philadelphia Eagles", abbreviation: "PHI", arena: "Lincoln Financial Field" },
+  { id: 27, name: "Pittsburgh Steelers", abbreviation: "PIT", arena: "Acrisure Stadium" },
+  { id: 28, name: "San Francisco 49ers", abbreviation: "SF", arena: "Levi's Stadium" },
+  { id: 29, name: "Seattle Seahawks", abbreviation: "SEA", arena: "Lumen Field" },
+  { id: 30, name: "Tampa Bay Buccaneers", abbreviation: "TB", arena: "Raymond James Stadium" },
+  { id: 31, name: "Tennessee Titans", abbreviation: "TEN", arena: "Nissan Stadium" },
+  { id: 32, name: "Washington Commanders", abbreviation: "WAS", arena: "FedExField" }
+];
+
+
+      let teamSelect = document.getElementById("teamSelect");
+      let detailsDiv = document.getElementById("detailsDiv");
+
+      for (const team of nflTeams) {
+        // let option = document.createElement("option")
+        // option.value = team.id;
+        // option.innerText = team.name;
+        let option = new Option(team.name, team.id);
+        teamSelect.appendChild(option);
+      }
+
+      function showDetails() {
+        let id = Number(teamSelect.value);
+        console.log(id);
+
+        let selectedTeam;
+        for (const team of nflTeams) {
+          if (team.id === id) {
+            selectedTeam = team;
+          }
+        }
+
+        console.log(selectedTeam);
+        detailsDiv.innerText = `${selectedTeam.name} (${selectedTeam.abbreviation}) was selected. They play in ${selectedTeam.arena}.`;
+      }
+
+      </script>
+</body>
+</html>
